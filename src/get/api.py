@@ -60,7 +60,5 @@ class API_Request:
         payload = self._update_payment(payment_id, paid_date)
         response = requests.put(self.url, json=payload, headers=self.header)
 
-        if response.status_code == 200:
-            print(response)
-        else:
+        if response.status_code != 200:
             return {"error": f"Failed to update payment. Status code: {response.status_code}"}
