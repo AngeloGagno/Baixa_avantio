@@ -1,7 +1,6 @@
 from database.query import Connection_DB
 from extract.bookings_excel import Excel
 from utils.credentials import DBConfig
-from get.payment_id import change_payment_configs
 import pandas as pd
 from datetime import timedelta
 def get_database():
@@ -24,7 +23,7 @@ def transform_dataframe():
     excel['Data de pagamento'] = transform_df_date(excel['Data de pagamento'])
     excel['Data de pagamento'] = change_date(excel['Data de pagamento'])
     excel['Data de pagamento'] = excel['Data de pagamento'].dt.strftime('%Y-%m-%d')
-    return excel
+    return excel.reset_index(drop=True)
 
 def finish_date_clear(df):
     df['Data de pagamento'] = pd.to_datetime(df['Data de pagamento'])

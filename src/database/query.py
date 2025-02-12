@@ -9,6 +9,7 @@ class Connection_DB:
         self.port = port
         self.connection = self._connection_string()
         self.engine = self._creating_engine()
+        self.close = self.close_connection()
     def _connection_string(self):
         return f"postgresql+psycopg2://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}"
     
@@ -21,7 +22,7 @@ class Connection_DB:
         with self.engine.connect() as conn:
             result = conn.execute(query)
             row = result.fetchone()  # Pega a primeira linha
-
+            self.close
         return (row[0], row[1]) if row else (None, None)
 
         
