@@ -8,7 +8,6 @@ def execute():
             descricao = excel['Descrição'][line]
             payment_date = excel['Data de pagamento'][line]
             valor,booking_id = queries(query = f"select (total_payment - portal_comission) as valor, id_booking from bookings where portal_reference like '%{descricao}%'")
-            print(excel.iloc[line])
             if valor == None:
                   excel.loc[line,'Status'] = 'Nao encontrado'
 
@@ -22,4 +21,3 @@ def execute():
     
     excel = finish_date_clear(excel)
     return excel
-
