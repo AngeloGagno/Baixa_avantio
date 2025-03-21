@@ -1,3 +1,3 @@
-from load.send_to_excel import send_to_excel
+from frontend.app import App
 
-send_to_excel()
+App()
