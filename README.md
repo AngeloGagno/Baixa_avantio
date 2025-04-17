@@ -19,6 +19,20 @@ O Baixa Avantio é uma solução que permite atualizar o status de pagamento de 
   - Pandas (processamento de dados)
   - Requests (comunicação com API)
 - **Infraestrutura**: Docker
+- **Python**: 3.12
+
+## Dependências Principais
+
+```
+python = "^3.12"
+sqlalchemy = "^2.0.28"
+pandas = "^2.2.1"
+requests = "^2.31.0"
+streamlit = "^1.32.0"
+openpyxl = "^3.1.2"
+python-dotenv = "^1.0.1"
+psycopg2-binary = "^2.9.9"
+```
 
 ## Fluxo de Funcionamento
 
@@ -70,6 +84,7 @@ poetry.lock
 - Docker e Docker Compose instalados
 - Credenciais de acesso ao banco de dados PostgreSQL
 - API key da Avantio
+- Python 3.12 (para desenvolvimento local)
 
 ### Configuração
 
@@ -103,3 +118,8 @@ Após a inicialização, acesse a interface web através do navegador no endere�
 2. Faça upload do arquivo XLSX contendo as referências de reservas
 3. Aguarde o processamento
 4. Faça download do relatório gerado com os resultados das operações
+
+## Contato
+
+- GitHub: [Angelo Gagno](https://github.com/AngeloGagno)
+- LinkedIn: [Angelo Gagno](https://www.linkedin.com/in/angelogagno)
