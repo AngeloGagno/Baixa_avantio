@@ -1,7 +1,5 @@
-import os
 import pandas as pd
 from pathlib import Path
-from dotenv import load_dotenv
 
 class Excel:
     def __init__(self):
@@ -24,7 +22,3 @@ class Excel:
     
     def delete_file(self):
         self.file_name.unlink()
-
-Excel().delete_file()
-
-
